@@ -1,0 +1,6 @@
+- hosts: debian ubuntu
+  tasks: 
+    - name: Update Debian and Ubuntu systems
+      apt: upgrade=safe update_cache=true
+      become: yes
+       

@@ -1,0 +1,9 @@
+#- name: copy APT sources list
+#  copy: src={{ansible_distribution_release}}-sources.list dest=/etc/apt/sources.list
+#    owner=root mode=644 force=yes
+
+- name: Update RedHat-Alike
+  yum: name="*" state=latest
+  become: true
+  when: ansible_os_family == "RedHat"
+
